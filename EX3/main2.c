@@ -2,7 +2,7 @@
 
 int main()
 {
-    int i = 2;
+    int i = 15;
     if (i % 15 == 0)
     {
         printf("Love IU");
