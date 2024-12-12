@@ -20,6 +20,8 @@ int main() {
             break;
         }
     }
+    pi = ipi;
+    pi=pi/100000;
     printf("%d %.5f\n", x, pi);
 
     return 0;
