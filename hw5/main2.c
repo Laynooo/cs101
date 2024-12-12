@@ -1,22 +1,26 @@
 #include <stdio.h>
-#include <math.h>
 
-int main()
-{
-    double PI = 0.0, i = 0.0, x = 1.0; 
-    int sign = 1;
+int main() {
+    double pi = 4.0;
+    int flag = 1;
+    long ipi = 0;
+    int x = 0;
 
-    for (;; x++) { 
-        i = 4.0 / ((2 * x) - 1);
-        PI = PI + (i * sign);
-        sign = sign * -1;
-
-        if (fabs(PI - 3.14159) <= 0.000001) {
+    for (int i = 3; i < 1000000; i += 2) {
+        if (flag == 0) {
+            pi += (4.0 / i);
+            flag++;
+        } else {
+            pi -= (4.0 / i);
+            flag--;
+        }
+        ipi = pi * 100000;
+        if (ipi == 314159) {
+            x = i;
             break;
         }
     }
+    printf("%d %.5f\n", x, pi);
 
-    printf("PI = %.5f\n", PI);
-    printf("x = %.0f\n", x); 
     return 0;
 }
